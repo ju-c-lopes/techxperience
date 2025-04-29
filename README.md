@@ -23,7 +23,10 @@ techXperience/
 ├── .env.staging
 ├── docker-compose.prod.yml
 ├── .env.prod
+├── wordpress/
 ├── Makefile
+├── scripts-infra/
+│   ├── safe-iptables.sh
 ├── aprendizados/
 │   ├── Projeto.md
 └── README.md  # ← você está aqui!
@@ -101,5 +104,5 @@ Cada ambiente possui:
 Clone o repositório:
 
 ```bash
-git clone git@github.com:seu_usuario/techxperience.git
+git clone git@github.com:ju-c-lopes/techxperience.git
 cd techxperience

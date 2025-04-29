@@ -137,3 +137,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+define( 'DB_NAME', getenv('WORDPRESS_DB_NAME') ?: 'wordpress' );
+define( 'DB_USER', getenv('WORDPRESS_DB_USER') ?: 'root' );
+define( 'DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD') ?: 'password' );
+define( 'DB_HOST', getenv('WORDPRESS_DB_HOST') . ":" . getenv('WORDPRESS_PORT') ?: 'localhost' );
+define( 'WP_DEBUG', getenv('WP_DEBUG') === 'true' );
+
+// Definindo o tipo de ambiente (dev, staging, production)
+define( 'WP_ENVIRONMENT_TYPE', getenv('WP_ENVIRONMENT_TYPE') ?: 'production' );
