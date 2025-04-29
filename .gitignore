@@ -1,0 +1,27 @@
+# Ignorar variáveis de ambiente
+.env
+.env.*
+
+# Ignorar volumes de banco de dados Docker
+volumes/
+db_data_dev/
+db_data_staging/
+db_data_prod/
+
+# Ignorar arquivos temporários do VSCode
+.vscode/
+
+# Ignorar arquivos temporários de sistema
+*.log
+*.tmp
+*.bak
+
+# Ignorar cache de dependências (caso futuro use)
+node_modules/
+vendor/
+
+# Ignorar imagens geradas ou arquivos de build
+*.tar
+*.zip
+build/
+dist/

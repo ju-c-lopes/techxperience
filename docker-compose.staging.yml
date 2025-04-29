@@ -1,0 +1,32 @@
+services:
+  db:
+    image: mariadb:latest
+    container_name: wordpress_db_staging
+    restart: unless-stopped
+    env_file:
+      - ./.env.staging
+    environment:
+      MARIA_DATABASE: ${MYSQL_DATABASE}
+      MARIA_USER: ${MYSQL_USER}
+      MARIA_PASSWORD: ${MYSQL_PASSWORD}
+      MARIA_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./volumes/db_data_staging:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress_app_staging
+    restart: unless-stopped
+    env_file:
+      - ./.env.staging
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}:3306
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    ports:
+      - "8082:80"
+    depends_on:
+      - db
+    volumes:
+      - ./wordpress:/var/www/html
