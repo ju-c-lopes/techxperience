@@ -17,6 +17,7 @@ staging:
 # Carrega variáveis e sobe containers para PROD
 prod:
 	@echo "🔧 Subindo ambiente PROD..."
+	@echo $(cat .env.prod)
 	@set -a && . ./.env.prod && set +a && docker compose -f docker-compose.prod.yml up -d
 	@echo "Ambiente PROD iniciado em http://ip-do-host:8080 🚀"
 

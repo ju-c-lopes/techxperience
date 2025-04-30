@@ -6,10 +6,10 @@ services:
     env_file:
       - ./.env.prod
     environment:
-      MARIA_DATABASE: ${MARIA_DATABASE}
-      MARIA_USER: ${MARIA_USER}
-      MARIA_PASSWORD: ${MARIA_PASSWORD}
-      MARIA_ROOT_PASSWORD: ${MARIA_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIA_DATABASE}
+      MARIADB_USER: ${MARIA_USER}
+      MARIADB_PASSWORD: ${MARIA_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIA_ROOT_PASSWORD}
     volumes:
       - ./volumes/db_data_prod:/var/lib/mysql
 
@@ -25,7 +25,7 @@ services:
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
     ports:
-      - "8080:80"
+      - "8083:80"
     depends_on:
       - db
     volumes:
