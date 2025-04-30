@@ -6,10 +6,10 @@ services:
     env_file:
       - ./.env.dev
     environment:
-      MARIA_DATABASE: ${MARIA_DATABASE}
-      MARIA_USER: ${MARIA_USER}
-      MARIA_PASSWORD: ${MARIA_PASSWORD}
-      MARIA_ROOT_PASSWORD: ${MARIA_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIA_DATABASE}
+      MARIADB_USER: ${MARIA_USER}
+      MARIADB_PASSWORD: ${MARIA_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIA_ROOT_PASSWORD}
     volumes:
       - ./volumes/db_data_dev:/var/lib/mysql
 
