@@ -6,10 +6,10 @@ services:
     env_file:
       - ./.env.prod
     environment:
-      MARIA_DATABASE: ${MYSQL_DATABASE}
-      MARIA_USER: ${MYSQL_USER}
-      MARIA_PASSWORD: ${MYSQL_PASSWORD}
-      MARIA_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MARIA_DATABASE: ${MARIA_DATABASE}
+      MARIA_USER: ${MARIA_USER}
+      MARIA_PASSWORD: ${MARIA_PASSWORD}
+      MARIA_ROOT_PASSWORD: ${MARIA_ROOT_PASSWORD}
     volumes:
       - ./volumes/db_data_prod:/var/lib/mysql
 
