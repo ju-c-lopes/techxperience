@@ -32,11 +32,11 @@ techXperience/
 └── README.md  # ← você está aqui!
 ```
 
-## 🚀 Como usar
+## 🚀 Exemplo de como usar
 
 ### 1. Subir ambiente de desenvolvimento
 ```bash
-make up-dev
+make dev
 ```
 
 ### 2. Derrubar ambiente de desenvolvimento
